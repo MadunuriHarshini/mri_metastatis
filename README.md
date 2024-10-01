@@ -1,6 +1,8 @@
 # mri_metastatis
-Nested U-Net
+
 The Nested U-Net architecture builds upon the classic U-Net model by incorporating a series of nested skip pathways. This design allows the model to capture features at multiple resolutions, improving the flow of information throughout the network. As a result, it excels at retaining both local and global context, making it particularly suited for complex medical images where the boundaries of lesions may not be well-defined.
 
-Attention U-Net
 Attention U-Net integrates an attention mechanism into the U-Net architecture, enabling the model to focus on the most relevant parts of the input images. This is especially beneficial in brain metastasis segmentation, where the tumors can have irregular shapes and vary significantly in appearance. By emphasizing critical regions, the Attention U-Net enhances the segmentation performance and reduces false positives.
+
+CHALLENGES
+Brain metastasis segmentation presents several challenges due to the complex nature of MRI data, high variability in metastasis size and shape, class imbalance, and low contrast between metastases and surrounding tissues. To address these challenges, we used Contrast Limited Adaptive Histogram Equalization (CLAHE) to enhance local contrast, making metastases more distinguishable. Data augmentation techniques, such as flips, rotations, and intensity adjustments, increased dataset diversity, enabling the model to generalize better. We tackled class imbalance by employing the Dice Loss function, which prioritizes learning from the metastasis regions. Advanced segmentation architectures, such as Nested U-Net and Attention U-Net, were utilized to extract intricate features and focus on relevant regions, reducing false positives. The attention mechanism in Attention U-Net also improved interpretability by visualizing the regions of focus, which is essential for clinical trust. These strategies, combined with augmentation and efficient model training techniques, helped mitigate the challenges, providing more accurate and clinically useful metastasis segmentation results.
